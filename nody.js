@@ -1,13 +1,10 @@
+require.paths.unshift(__dirname);
+
 var fs = require('fs');
 var path = require('path');
 var http = require('http');
 var static = require('node-static');
-var config = require('./config.json');
-
-//var config = {
-//    host_ip : '127.0.0.1',
-//    host_port : 8000,
-//};
+var config = require('config');
 
 var file = new(static.Server)('./public');
 var http_server = http.createServer(function(req, res) {
